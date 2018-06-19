@@ -18,6 +18,14 @@ public protocol CBPinEntryViewDelegate: class {
     
     @IBInspectable open var spacing: CGFloat = CBPinEntryViewDefaults.spacing
 
+    @IBInspectable open var entrySpacing: CGFloat = CBPinEntryViewDefaults.entrySpacing {
+        didSet {
+            if oldValue != entrySpacing {
+                updateButtonStyles()
+            }
+        }
+    }
+
     @IBInspectable open var entryCornerRadius: CGFloat = CBPinEntryViewDefaults.entryCornerRadius {
         didSet {
             if oldValue != entryCornerRadius {
